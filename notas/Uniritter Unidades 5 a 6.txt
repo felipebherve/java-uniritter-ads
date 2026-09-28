@@ -1,0 +1,255 @@
+Uniritter Unidades 5 a 6
+Lista de siglas importantes:
+Programação Orientada a Objetos (POO)
+Linguagem Smalltalk, criada no Xerox PARC durante a década de 1970 (para POO)
+A Object Management Group apresenta a UML
+
+
+================================================================================================================================================================
+================================================================================================================================================================
+
+U5 Programação Orientada a Objetos 14/09/2026 15:14
+
+O que se espera aprender:
+Modelar e desenvolver aplicações em Java utilizando classes, objetos, atributos, métodos, construtores, encapsulamento e relacionamentos entre classes.
+
+
+Para acompanhar os conteúdos desta unidade, é importante que você já tenha conhecimentos básicos sobre:
+lógica de programação e construção de algoritmos; declaração e utilização de variáveis;
+tipos de dados primitivos; operadores aritméticos, relacionais e lógicos;
+estruturas condicionais; estruturas de repetição; criação e utilização de métodos; passagem de parâmetros;
+retorno de valores; escopo de variáveis; arrays e coleções básicas; organização de programas em Java.
+
+E antes de prosseguir, revise especialmente:
+declaração de variáveis; criação de métodos; parâmetros e retorno;
+diferença entre variáveis locais e variáveis de classe; organização básica de um programa Java.
+Programação Orientada a Objetos (POO)
+
+
+================================================================================================================================================================
+================================================================================================================================================================
+
+U5 Fundamentos da Programação Orientada a Objetos 14/09/2026 15:29
+
+
+O paradigma de programação é uma forma de pensar, organizar e expressar soluções computacionais.
+a maneira de dividir um problema; a forma de representar os dados; o local em que as operações serão implementadas; 
+a maneira como as partes do programa se comunicam; a organização do código-fonte.
+
+o problema costuma ser dividido principalmente em procedimentos, funções e etapas de processamento
+dados; características; responsabilidades; comportamentos; relações com outros elementos.
+
+cada objeto possui responsabilidades; cada objeto mantém determinados dados;
+cada objeto oferece operações; objetos diferentes colaboram para realizar uma tarefa maior.
+
+Em software, o estado é armazenado em campos, enquanto os comportamentos são disponibilizados por métodos.
+
+ex:
+Um produto pode possuir o seguinte estado:
+nome; preço; quantidade disponível; código.
+
+Também pode possuir os seguintes comportamentos:
+alterar preço; reduzir estoque; aumentar estoque; exibir informações.
+
+Comportamento: O comportamento corresponde às operações que o objeto pode executar.
+Identidade: A identidade permite distinguir um objeto de outro, ainda que os dois apresentem valores iguais.
+
+objeto pode ser responsável por:
+armazenar dados relacionados ao seu conceito; realizar cálculos;
+validar mudanças em seu estado; fornecer informações; solicitar operações a outros objetos.
+
+Aplicação passo a passo do POO
+Passo 1 - Identificar elementos relevantes
+Passo 2 - Identificar estados
+Passo 3 - Identificar comportamentos
+Passo 4 - Distribuir responsabilidades
+Passo 5 - Esboçar a solução
+
+
+================================================================================================================================================================
+================================================================================================================================================================
+
+U5 Classes, Objetos e Encapsulamento 14/09/2026 15:49 pausa 17:21
+
+O que é uma classe?
+Uma classe é uma estrutura que descreve os dados e comportamentos que seus objetos poderão possuir.
+A classe Produto define: um atributo chamado nome; um atributo chamado preco; um método chamado exibirResumo.
+
+O que é um objeto?
+Um objeto é uma instância criada a partir de uma classe.
+
+O operador new cria o objeto, e o construtor participa de sua inicialização. A documentação oficial resume esse processo afirmando que um objeto é criado a partir de uma classe com o operador new e um construtor.
+Produto produto = new Produto();
+
+Atributos
+Atributos são variáveis declaradas no corpo de uma classe e utilizadas para representar o estado de seus objetos.
+
+Métodos
+Métodos representam operações que uma classe disponibiliza.
+
+Construtores
+Um construtor é utilizado para inicializar um objeto.
+Ele possui: o mesmo nome da classe; nenhum tipo de retorno; parâmetros opcionais; execução no momento da instanciação.
+
+A palavra-chave this
+A palavra-chave this representa o objeto atual.
+Ela é especialmente útil quando parâmetros e atributos possuem o mesmo nome
+O uso de this torna explícito que o atributo do objeto está sendo atualizado.
+
+Encapsulamento
+Encapsulamento consiste em proteger e organizar o estado interno de um objeto, definindo operações controladas para sua utilização.
+
+Antes do encapsulamento
+public class Produto {public String nome; public double preco;}
+
+
+Depois do encapsulamento
+public class Produto {private String nome; private double preco; public String getNome() {return nome;}
+public double getPreco() {return preco;}}
+
+
+Modificadores de acesso
+Os principais modificadores utilizados nesta unidade são public e private.
+
+public
+O membro pode ser acessado por outras classes.
+public double getPreco() {return preco;}
+
+private
+O membro pode ser acessado diretamente apenas no corpo da própria classe.
+private double preco;
+
+Métodos de consulta
+Um método de consulta fornece uma informação sem permitir o acesso direto ao atributo.
+
+Métodos de alteração
+Um método de alteração pode controlar as regras antes de modificar um atributo.
+
+Passo 1 - Tornar os atributos privados
+private String usuario;
+private double saldo;
+
+Passo 2 - Criar um construtor
+public ContaCreditos(String usuario) {
+this.usuario = usuario;
+this.saldo = 0;}
+
+
+Passo 3 - Criar métodos de consulta
+public String getUsuario() {
+return usuario;}
+
+
+Passo 4 - Criar uma operação de adição
+public boolean adicionarCreditos(double valor) {
+if (valor <= 0) {
+return false;}
+saldo += valor;
+return true;}
+
+
+Passo 5 - Criar uma operação de utilização
+public boolean utilizarCreditos(double valor) {
+if (valor <= 0 || valor > saldo) {
+return false;}
+saldo -= valor;
+return true;}
+
+
+Resultado
+public class ContaCreditos {
+private String usuario;
+private double saldo;
+public ContaCreditos(String usuario) {
+this.usuario = usuario;
+this.saldo = 0;}
+public String getUsuario() {
+return usuario;}
+
+public double getSaldo() {
+return saldo;}
+
+public boolean adicionarCreditos(double valor) {
+if (valor <= 0) {
+return false;}
+saldo += valor;
+return true;}
+
+public boolean utilizarCreditos(double valor) {
+if (valor <= 0 || valor > saldo) {
+return false;}
+saldo -= valor;
+return true;}}
+
+Leia as páginas 1 a 24 do capítulo 1 do livro Desenvolvimento de software III: programação de sistemas web orientada a objetos em java de MACHADO et. al.
+
+================================================================================================================================================================
+================================================================================================================================================================
+
+U5 Explorando Relacionamentos entre Classes e Reutilização 18/09/2026 17:41
+
+Por que relacionar classes?
+Uma classe representa uma parte do domínio, mas aplicações completas dependem da colaboração entre diferentes partes.
+Em Java, uma relação pode ser representada colocando uma referência de uma classe como atributo de outra classe.
+
+Direção da associação
+Uma associação pode ser navegável em uma ou nas duas direções.
+
+Multiplicidade
+A multiplicidade indica quantas instâncias podem participar de um relacionamento.
+Exemplos
+Um pedido pertence a um cliente.
+Um cliente pode possuir vários pedidos.
+Representação simplificada:
+Cliente 1 -------- 0..* Pedido
+Outro exemplo:
+Um pedido possui um ou vários itens. Cada item pertence a um pedido.
+Representação:
+Pedido 1 -------- 1..* ItemPedido
+
+
+Composição
+Composição é um relacionamento forte entre um objeto que representa o todo e objetos que representam suas partes.
+Exemplos:
+Pedido e seus itens
+Questionário e suas questões
+Turma e seus horários cadastrados
+Carrinho e seus itens
+
+
+
+Associação e composição: diferença principal
+Associação
+Um objeto conhece outro, mas ambos podem possuir ciclos de vida independentes.
+Pedido - Cliente
+O cliente pode existir sem o pedido.
+
+Composição
+O objeto parte pertence fortemente ao objeto todo.
+Pedido ◆- ItemPedido
+Dentro do modelo proposto, o item existe como parte daquele pedido.
+
+Critério			Associação			Composição
+Intensidade da relação		Geral				Forte, todo-parte
+Ciclo de vida			Pode ser independente		Parte controlada pelo todo
+Exemplo				Pedido e Cliente		Pedido e ItemPedido
+Criação da parte		Pode ocorrer externamente	Preferencialmente controlada pelo todo
+Compartilhamento		Pode ocorrer			Parte normalmente pertence a um todo
+
+
+Uso da UML
+A UML pode ser utilizada para representar classes e seus relacionamentos antes ou durante a implementação.
+
+Implementação da associação Cliente–Pedido
+Implementação da classe ItemPedido
+Implementação da composição Pedido–ItemPedido
+
+
+================================================================================================================================================================
+================================================================================================================================================================
+
+U5 Modelagem e Desenvolvimento de Aplicações
+
+
+
+

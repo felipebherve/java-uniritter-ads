@@ -1,0 +1,1404 @@
+algoritimos e programação
+
+===============================================================================
+
+palavras importantes
+
+JVM (Java Virtual Machine) é a máquina virtual responsável por executar o bytecode gerado a partir do código-fonte Java
+
+bytecode: compilado para um formato intermediário
+
+ JIT (Just-In-Time)
+DRY (Don't Repeat Yourself)
+
+======================================================================================================================================================================
+======================================================================================================================================================================
+
+U2 - Lógica de programação, Linguagens, IDEs e Java 28/08/2026
+
+IDES:
+IntelliJ IDEA (muito usada para Java).
+Eclipse IDE (tradicional no ecossistema Java).
+NetBeans (IDE com suporte histórico ao Java).
+Visual Studio (IDE mais completa, muito comum para .NET e C++).
+Visual Studio Code (editor leve e extensível que pode virar uma IDE).
+
+JAVA:
+java -version
+javac -version
+
+
+JDK (Java Development Kit) : compilador javac e o executador java
+Processamento
+____________________________JDK
+Você escreve o código-fonte em um arquivo .java.
+Você compila com javac e gera um arquivo .class (bytecode).
+Você executa com java e a JVM roda seu programa.
+____________________________JDK
+
+
+JRE (Java Runtime Environment) : ambiente de execução para rodar aplicações prontas
+
+
+======================================================================================================================================================================
+======================================================================================================================================================================
+
+U2 Estruturas e Condicionais 28/08/26
+
+if, else e switch
+
+
+== <= >= != && || !
+
+
+Componentes Principais
+switch (variável): Define qual valor será testado. Pode ser um número (int), um caractere (char) ou um texto (String).
+case valor: Representa uma das opções possíveis. Note o uso dos dois pontos (:) após o valor.
+break: Comando vital que encerra a execução do switch. Sem ele, o Java continuaria executando os próximos casos (estudaremos isso no próximo bloco). Note o uso do ponto e virgula (;) após o valor.
+default: Funciona exatamente como o nosso else. É executado se nenhum dos case anteriores for compatível com a variável. Note o uso dos dois pontos (:) após o valor.
+
+
+======================================================================================================================================================================
+======================================================================================================================================================================
+
+U2 Estruturas de Repetição em Algoritimos 28/08/26
+
+__________________________________
+FOR
+
+for (inicializacao; condicao; atualizacao) {
+    // corpo do laço
+}
+
+double soma = 0.0;
+for (int i = 1; i <= n; i++) {
+    double valor = entrada.nextDouble();
+    soma += valor;
+}
+
+for (int i = 0; i <= 10; i += 2) {System.out.println(i);}
+for (int i = 10; i >= 1; i--) {System.out.println(i);}
+
+Laços aninhados : laço é declarado dentro de outro
+for (int linha = 1; linha <= 3; linha++) {
+    for (int coluna = 1; coluna <= 4; coluna++) {
+        System.out.print("(" + linha + "," + coluna + ") ");
+    }
+    System.out.println();
+}
+__________________________________
+WHILE : verifica a condição antes de executar o corpo.
+lê uma vez, testa, e repete enquanto estiver inválido.
+__________________________________
+DO WHILE : executa o corpo pelo menos uma vez e só depois verifica a condição
+você pede e lê dentro do bloco, e só depois valida.
+__________________________________
+BREACK : encerra completamente o laço de repetição, transferindo o controle para a instrução seguinte ao laço.
+for (int i = 1; i <= 10; i++) {
+
+    if (i == 6) {
+        break;
+    }
+    System.out.println(i);
+}
+
+CONTINUE :  interrompe apenas a iteração atual e inicia imediatamente a próxima repetição do laço.for (int i = 1; i <= 10; i++) {
+    if (i % 2 == 0) {
+        continue;
+    }
+    System.out.println(i);
+}
+
+======================================================================================================================================================================
+======================================================================================================================================================================
+
+U2 Estruturas de Controle e Modularização 28/08/26
+
+Modularização
+Modulos
+
+Função:
+public class Biblioteca {
+    public static double calcularMulta(int diasAtraso, double taxaMulta) {
+        return diasAtraso * taxaMulta;
+    }
+}
+______________
+public class Biblioteca {
+    public static double calcularMulta(int diasAtraso, double taxaMulta) {
+        return diasAtraso * taxaMulta;
+    }
+    public static void main(String[] args) {
+        double multaLivro1 = calcularMulta(5, 2.0);
+        double multaLivro2 = calcularMulta(10, 2.0);
+        System.out.println("Multa do Livro 1: R$ " + multaLivro1);
+        System.out.println("Multa do Livro 2: R$ " + multaLivro2);
+    }
+}
+______________
+
+
+
+======================================================================================================================================================================
+======================================================================================================================================================================
+
+U2 Efetivando a Experiência de Aprendizagem 01/09/2026 03:30
+
+Apenas exercícios para reforçar como utilizar o FOR While e do While, 
+além de perguntas sobre if else e para que serve modularização e condicionais
+
+
+======================================================================================================================================================================
+======================================================================================================================================================================
+
+U2 Interagindo em Rede 01/09/2026 03:32
+
+Achei péssima essa aula, apenas com links que mostram onde buscar informações, porém, são sites sem muito sentido para quem ainda não foi introduzido ao sistema java adequadamente.
+
+
+======================================================================================================================================================================
+======================================================================================================================================================================
+
+U3 Organização e Estruturas de Dados 01/09/2026 17:04
+(erro nos balões de texto, fácil arrumar com frontend) == oportunidade de negócio
+
+
+
+utilizar arrays, matrizes e coleções em Java para armazenar, localizar, modificar, remover e processar dados de forma organizada
+
+
+base para a Unidade 3:_______________________________________________
+Compreender o que são algoritmos e sequências de instruções;
+declarar e utilizar variáveis e constantes;
+reconhecer tipos de dados, como int, double, boolean, char e String;
+utilizar estruturas condicionais, como if, else e switch;
+utilizar estruturas de repetição, como for, while e do-while;
+criar e chamar métodos em Java;
+utilizar parâmetros, valores de retorno e escopo de variáveis;
+interpretar expressões aritméticas, relacionais e lógicas;
+acompanhar a execução de um programa passo a passo.
+_____________________________________________________________________
+
+double[ ] notas = new double[1000]; == {double nota1;double nota2;double nota3;double nota4;// ...;double nota1000;}
+
+O que esperar da Unidade 3:__________________________________________
+
+Ao concluir esta unidade, você deverá ser capaz de:
+
+Organizar e representar conjuntos de dados utilizando estruturas adequadas ao problema computacional.
+Declarar, preencher, acessar, percorrer e modificar arrays unidimensionais e matrizes multidimensionais em Java.
+Aplicar coleções no armazenamento e no processamento de informações cuja quantidade de elementos possa variar.
+Realizar operações de inserção, busca, alteração e remoção de dados em estruturas básicas.
+Selecionar estruturas de dados considerando o tipo de informação, a quantidade de elementos e as operações exigidas pelo programa.
+Desenvolver soluções mais organizadas, legíveis e reutilizáveis para problemas que envolvam conjuntos de dados.
+_____________________________________________________________________
+
+O que é ArrayList/LinkedList/HashSet
+
+perguntas para analisar dados:_______________________________________
+quais dados esse sistema precisa armazenar;
+quais dados aparecem em forma de lista;
+quais dados poderiam ser representados em linhas e colunas;
+quais informações podem ser adicionadas ou removidas durante o uso;
+qual operação parece ser mais frequente: inserir, buscar, alterar, remover ou percorrer.
+______________________________________________________________________
+
+
+===================================================================================
+===================================================================================
+
+
+U3 Introdução às Estruturas de Dados 01/09/2026 19:00
+
+Aprendemos a organizar de forma analítica os tipos de dados e quando devemos usar cada estrutura anteriormente citada
+Vimos que o modelo ideal é usar varias estruturas de dados diferentes com um objetivo
+entender quais dados serão fixos, quais irão variar, criar listas, array, objetos.
+
+!!!!importante!!!
+analisando a forma citada dos tipos de dados no java identifiquei divergência entre como são chamados alguns em python que ficam diferentes em java
+
+Uso comum			tipo Java		tipo Python		exemplo
+Números inteiros		int			int			25
+números decimais		double			float			1.1
+números decimais simples	float			float			3.5F
+valores lógicos			boolean			boolean			True/False
+Único ccaractere		char			str			'A'
+números inteiros maiores	long			int			150000L
+
+
+
+Uma estrutura de dados é uma forma de organizar dados em memória para permitir que determinadas operações sejam realizadas. Essas operações podem incluir:
+
+Armazenar;Acessar;Percorrer;Buscar;Inserir;Alterar;Remover;Ordenar;Agrupar;Contar.
+
+exemplo de redução de dados:_______________________________________________
+String produto1 = "Café";
+String produto2 = "Suco";
+String produto3 = "Sanduíche";
+
+reduzido:
+String[] produtos = {"Café", "Suco", "Sanduíche"};
+
+função para percorrer produtos:
+for (String produto : produtos) {
+    System.out.println(produto);
+}
+____________________________________________________________________________
+
+
+Estruturas homogêneas~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Uma estrutura homogênea armazena elementos de um mesmo tipo. Um array de números inteiros armazena apenas valores compatíveis com int:
+int[] quantidades = {4, 2, 7, 1};
+Uma lista de nomes armazena objetos do tipo String:
+ArrayList<String> nomes = new ArrayList<>();
+A homogeneidade facilita a execução da mesma operação sobre todos os elementos. Por exemplo:
+int soma = 0;
+for (int quantidade : quantidades) {
+    soma += quantidade;
+}
+Como todos os valores são inteiros, o programa pode somá-los sem precisar descobrir o tipo de cada posição.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Estruturas heterogêneas~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Uma estrutura heterogênea reúne informações de tipos diferentes que descrevem uma mesma entidade.
+Um pedido pode conter:
+Um número inteiro para a mesa;
+Um texto para o produto;
+Um número decimal para o preço;
+Um valor lógico para indicar pagamento.
+Em Java, esse agrupamento costuma ser representado por uma classe:
+public class Pedido {
+    int numeroMesa;
+    String produto;
+    double preco;
+    boolean pago;
+}
+A classe Pedido não representa apenas um valor. Ela reúne diferentes atributos relacionados a um mesmo conceito.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Estruturas de tamanho fixo
+
+String[] pedidos = new String[10];
+Esse array possui dez posições. Depois de criado, seu comprimento não pode ser alterado.
+pedidos[0] = "Café"; pedidos[0] = "Suco";
+
+Estruturas de tamanho variável
+
+ArrayList<String> pedidos = new ArrayList<>();
+pedidos.add("Café");
+pedidos.add("Suco");
+pedidos.add("Sanduíche");
+Um elemento também pode ser removido:
+pedidos.remove("Suco");
+
+Organização sequencial: os dados aparecem em uma determinada ordem e, frequentemente, podem ser acessados por uma posição.
+String[] produtos = {"Café", "Suco", "Bolo"};
+produtos[0] contém "Café";
+produtos[1] contém "Suco";
+produtos[2] contém "Bolo".
+
+Organização associativa: m valor é localizado por meio de uma chave.
+
+HashMap<Integer, String> produtosPorCodigo = new HashMap<>();
+produtosPorCodigo.put(101, "Café");
+produtosPorCodigo.put(205, "Suco");
+produtosPorCodigo.put(310, "Bolo");
+String produto = produtosPorCodigo.get(205);
+Nesse exemplo, o programa não procura o produto pela posição zero, um ou dois. Ele utiliza a chave 205.
+
+
+
+Necessidade					Estrutura inicialmente indicada		Motivo
+Armazenar sete temperaturas			array					A quantidade e conhecida e fixa
+Organizar notas por estudante e disciplina	Matriz					Os dados formam linhas e colunas
+Manter uma lista variavel de pedidos		ArrayList				A quantidade pode aumentar ou diminuir
+Evitar códigos repetidos			HashSet					O conjunto controla a unicidade
+Localizar um produto pelo código		HashMap					A busca utiliza uma chave
+Atender clientes pela ordem de chegada		Fila					O primeiro a entrar e o primeiro a sair
+
+Dados em variáveis separadas
+String produto1 = "Café";
+String produto2 = "Suco";
+String produto3 = "Bolo";
+
+Dados em um array
+String[] produtos = {"Café", "Suco", "Bolo"};
+
+Dados em uma lista
+ArrayList<String> produtos = new ArrayList<>();
+produtos.add("Café");
+produtos.add("Suco");
+produtos.add("Bolo");
+
+O array e a lista permitem percorrer os elementos:
+for (String produto : produtos) {
+    System.out.println(produto);
+}
+
+
+======================================================================================================================================================================
+======================================================================================================================================================================
+
+U3 Domine Arrays e Matrizes na Programação 01/09/2026 19:25
+
+
+Duas estruturas homogêneas fundamentais:
+
+Os arrays unidimensionais;
+Os arrays multidimensionais, frequentemente chamados de matrizes.
+
+
+
+Qual índice poderia representar os dias e qual índice poderia representar os produtos?
+
+
+##############################################################
+
+#Conceito de array: Um array é uma estrutura que armazena uma quantidade fixa de elementos de um mesmo tipo.
+
+“An array is a container object that holds a fixed number of values of a single type.”
+Isso significa que um array funciona como um contêiner com posições previamente definidas e elementos compatíveis com um único tipo. A especificação da linguagem também estabelece que arrays são objetos criados dinamicamente.
+Possui um tipo de elemento; Possui um comprimento fixo; Utiliza índices numéricos; Começa no índice zero; Permite acesso direto a uma posição; Pode armazenar valores primitivos ou referências; Pode possuir uma ou várias dimensões.
+Declaração de um array em JAVA
+int[] quantidades
+quantidades = new int[5];
+int[] quantidades = new int[5];
+
+Índices [ 0, 1 ,2 ,3]
+
+Acesso:
+String primeiroProduto = produtos[0];
+Alteração:
+produtos[1] = "Suco de laranja";
+
+Percurso com for
+for (int i = 0; i < produtos.length; i++) {
+    System.out.println(produtos[i]);
+}
+Análise da repetição
+int i = 0;
+A variável começa no primeiro índice.
+i < produtos.length;
+A repetição continua enquanto o índice for menor que o comprimento.
+i++;
+O índice avança uma posição.
+A condição não deve utilizar <=:
+i <= produtos.length
+Essa condição tentaria acessar uma posição inexistente.
+
+Alteração com for-each------------------------------------
+Considere:
+int[] valores = {10, 20, 30};
+for (int valor : valores) {
+    valor = valor * 2;
+}
+Esse código não altera o array original. A variável valor recebe uma cópia de cada valor primitivo.
+Para alterar as posições, utilize os índices:
+for (int i = 0; i < valores.length; i++) {
+    valores[i] = valores[i] * 2;
+}
+Depois da execução:
+20, 40, 60
+
+Maior valor---------------------------------------------
+int[] vendas = {35, 18, 42, 27, 31};
+int maior = vendas[0];
+for (int i = 1; i < vendas.length; i++) {
+    if (vendas[i] > maior) {
+        maior = vendas[i];
+    }
+}
+System.out.println("Maior venda: " + maior);-----------
+Maior valor e sua posição
+int maior = vendas[0];
+int posicaoMaior = 0;
+for (int i = 1; i < vendas.length; i++) {
+    if (vendas[i] > maior) {
+        maior = vendas[i];
+        posicaoMaior = i;
+    }
+}
+
+classe Arrays  java.util.Arrays
+https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html
+
+Inserção em array--------------------------------------
+int posicaoInsercao = 1;
+if (quantidade < produtos.length) {
+    for (int i = quantidade; i > posicaoInsercao; i--) {
+        produtos[i] = produtos[i - 1];
+    }
+    produtos[posicaoInsercao] = "Salada";
+    quantidade++;
+
+}
+
+Remoção em array ---------------------------------------
+int posicaoRemocao = 1;
+for (int i = posicaoRemocao; i < quantidade - 1; i++) {
+    produtos[i] = produtos[i + 1];
+}
+produtos[quantidade - 1] = null;
+quantidade--;
+
+##############################################################
+#Conceito de matriz: 
+uma matriz é representada por um array cujos elementos também são arrays.
+Uma matriz bidimensional utiliza dois índices:
+int[][] vendas;
+O primeiro índice normalmente representa a linha, e o segundo representa a coluna:
+vendas[linha][coluna]
+
+Declaração e criação de uma matriz:------------------------
+int[][] vendas = new int[5][4];
+Cinco linhas;
+Quatro colunas por linha;
+Vinte posições no total.
+
+Inicialização de uma matriz---------------------------------
+
+int[][] vendas = {
+    {35, 18, 12, 22},
+    {40, 21, 15, 25},
+    {32, 20, 17, 19},
+    {45, 24, 13, 30},
+    {58, 31, 20, 42}
+};
+
+Percurso de uma matriz-------------------------------------
+for (int linha = 0; linha < vendas.length; linha++) {
+    for (int coluna = 0; coluna < vendas[linha].length; coluna++) {
+        System.out.print(vendas[linha][coluna] + " ");
+    }
+    System.out.println();
+}
+vendas.length: Informa a quantidade de linhas.
+vendas[linha].length: Informa a quantidade de colunas da linha atual.
+
+Matrizes irregulares---------------------------------------
+int[][] dados = new int[3][];
+dados[0] = new int[2];
+dados[1] = new int[4];
+dados[2] = new int[1];
+array irregular ou jagged array
+
+
+compilando:
+A lanchonete registrou as vendas em uma matriz.
+
+int[][] vendas = {
+    {35, 18, 12, 22},    {40, 21, 15, 25},    {32, 20, 17, 19},    {45, 24, 13, 30},    {58, 31, 20, 42}};
+
+As linhas representam os dias:
+String[] dias = {    "Segunda-feira",    "Terça-feira",    "Quarta-feira",    "Quinta-feira",    "Sexta-feira"};
+
+As colunas representam os produtos:
+String[] produtos = {    "Café",    "Suco",    "Bolo",    "Sanduíche"};
+
+Leia as páginas 41 a 62 do capítulo 3 do livro Estrutura de Dados em Java de RODRIGUES et. al. para entender melhor sobre conceitos básicos de array, vetor e matriz em linguagem de programação Java
+
+19:52
+
+======================================================================================================================================================================
+======================================================================================================================================================================
+
+U3 Manipulação de Dados em Coleções 01/09/2026 21:26
+
+Collections Framework: é o conjunto de estruturas que o Java disponibiliza para trabalhar com grupos de dados
+
+Conceito de coleção https://docs.oracle.com/en/java/javase/21/core/java-collections-framework.html
+
+O framework reúne:
+Interfaces; Implementações; Algoritmos; Métodos utilitários.
+interfaces representam comportamentos gerais.
+implementações fornecem estruturas concretas.
+
+
+List<String> pedidos = new ArrayList<>();
+Nesse código: List é a interface; ArrayList é a implementação;
+String é o tipo dos elementos; Pedidos é a variável.
+
+The Collections Framework is the most widely used API of the JDK
+The first thing you need to know is that, from a technical point of view, the Collections Framework is a set of interfaces that models different ways of storing data in different types of containers. Then the Framework provides at least one implementation for each interface. Knowing these implementations is as important as the interfaces, and choosing the right one depends on what you need to do with it.
+
+There is no direct relationship between the interfaces of the Collection hierarchy and the Map hierarchy.
+
+public static void exibirPedidos(List<String> pedidos) {
+    for (String pedido : pedidos) {
+        System.out.println(pedido);
+    }
+} Esse método pode trabalhar com diferentes implementações de List.
+
+Genéricos----------------------------------------------------------
+ Eles permitem que você defina, no momento da criação, qual tipo de dado a coleção vai armazenar.
+Os símbolos < > indicam o tipo de elemento que a coleção armazenará.
+ArrayList<String> nomes = new ArrayList<>();
+Essa lista armazena objetos String.
+
+ArrayList<Integer> quantidades = new ArrayList<>();
+Essa lista armazena objetos Integer.
+
+Os genéricos ajudam o compilador a impedir inserções incompatíveis:
+
+ArrayList<String> produtos = new ArrayList<>();
+produtos.add("Café");
+
+A instrução abaixo é inválida:
+produtos.add(10);
+-------------------------------------------------------------------
+
+Interface List-----------------------------------------------------
+Mantém uma ordem; Permite elementos repetidos; Possui índices;Permite acesso posicional ;Pode aumentar ou diminuir.
+Criação
+import java.util.ArrayList;
+import java.util.List;
+List<String> pedidos = new ArrayList<>();
+
+Inserção no final		pedidos.add("Café");
+Inserção em uma posição		pedidos.add(1, "Sanduíche");
+Acesso				String primeiro = pedidos.get(0);
+Alteração			pedidos.set(1, "Suco de laranja")
+Remoção por valor		pedidos.remove("Bolo");
+Remoção por índice		pedidos.remove(0);
+Verificação			boolean existe = pedidos.contains("Café");
+Tamanho				int quantidade = pedidos.size();
+Verificação de lista vazia	boolean vazia = pedidos.isEmpty();
+Limpeza				pedidos.clear();
+
+percorrendo  valores na lista
+FOR: for (int i = 0; i < pedidos.size(); i++) {System.out.println(pedidos.get(i));}
+FOR-EACH: for (String pedido : pedidos) {System.out.println(pedido);}
+Iterator: 
+import java.util.Iterator;
+Iterator<String> iterador = pedidos.iterator();
+while (iterador.hasNext()) {
+ String pedido = iterador.next();
+ System.out.println(pedido);}
+
+Leia as páginas 97 a 112 do capítulo 6 do livro Estrutura de Dados em Java de RODRIGUES et. al. para  identificar a estrutura e as operações de uma lista em linguagem de programação Java.
+--------------------------------------------------------------------
+
+Interface Set-------------------------------------------------------
+Para situações em que a unicidade das informações é fundamental,
+import java.util.HashSet;
+import java.util.Set;
+Set<String> codigosUtilizados = new HashSet<>();
+
+Inserção		codigosUtilizados.add("PROMO10"); boolean inserido = codigosUtilizados.add("PROMO10");
+Verificação		boolean utilizado = codigosUtilizados.contains("PROMO10");
+Remoção			for (String codigo : codigosUtilizados) {System.out.println(codigo);}
+Ponto de atenção	Um HashSet não deve ser utilizado quando a posição dos elementos é importante. Ele não oferece acesso por índice.
+--------------------------------------------------------------------
+
+Interface Map-------------------------------------------------------
+Um Map armazena pares formados por chave e valor.
+
+import java.util.HashMap;
+import java.util.Map;
+Map<Integer, String> produtos = new HashMap<>();
+Cada chave identifica um valor: produtos.put(101, "Café"); produtos.put(205, "Suco"); produtos.put(310, "Bolo");
+
+Recuperação		String produto = produtos.get(205);
+Verificação de chave	boolean possuiCodigo = produtos.containsKey(205);
+Verificação de valor	boolean possuiProduto = produtos.containsValue("Bolo");
+Remoção			produtos.remove(310);
+Tamanho			int quantidade = produtos.size();
+Ponto de atenção	As chaves devem ser únicas. Quando um novo valor é associado a uma chave existente, o valor anterior é substituído:produtos.put(205, "Suco de laranja");
+
+
+Como percorrer um Map:
+
+Percurso das chaves: for (Integer codigo : produtos.keySet()) { System.out.println(codigo);}
+Percurso dos valores: for (String produto : produtos.values()) {System.out.println(produto);}
+Percurso dos pares: for (Map.Entry<Integer, String> entrada : produtos.entrySet()) {System.out.printf( "Código: %d | Produto: %s%n", entrada.getKey(), entrada.getValue() );}
+
+Forma com getOrDefault()
+for (String produto : vendas) {
+    int quantidadeAtual = contagem.getOrDefault(produto, 0);
+    contagem.put(produto, quantidadeAtual + 1);
+}
+
+Resultado: Café → 3 Suco → 2 Bolo → 1
+--------------------------------------------------------------------
+
+Interface Queue ----------------------------------------------------
+
+Uma fila representa uma organização em que os elementos normalmente são processados conforme a ordem de chegada.
+FIFO: First In, First Out.
+Em português: O primeiro a entrar é o primeiro a sair.
+
+import java.util.ArrayDeque;
+import java.util.Queue;
+Queue<String> filaPedidos = new ArrayDeque<>();
+
+Inserção
+filaPedidos.offer("Pedido 101");
+filaPedidos.offer("Pedido 102");
+filaPedidos.offer("Pedido 103");
+
+Consulta do primeiro
+String proximo = filaPedidos.peek();
+
+Remoção do primeiro
+String atendido = filaPedidos.poll();
+
+Após a remoção do pedido 101, o pedido 102 passa a ser o primeiro.
+--------------------------------------------------------------------
+
+Ordenação de listas
+
+Ordem crescente
+List<Integer> valores = new ArrayList<>(); valores.add(30); valores.add(10); valores.add(20); Collections.sort(valores);
+Resultado: [10, 20, 30]
+rdem decrescente
+Collections.sort(valores, Collections.reverseOrder());
+Resultado: [30, 20, 10]
+
+ARRAY vs ARRAYLIST (JAVA)
+Conceito Geral:
+	• Recomendação: Usar ArrayList para percorrer ou acessar elementos por índice.
+	• A escolha depende do padrão de uso do programa.
+Comparativo Direto:
+	• Tamanho:
+		- Array: Fixo
+		- ArrayList: Variável (dinâmico)
+	• Tipos Primitivos:
+		- Array: Aceita diretamente (int, double, char...)
+		- ArrayList: Requer Wrapper Classes (Integer, Double, Character...)
+	• Acesso por Índice:
+		- Ambos suportam (Sim)
+	• Inserção e Remoção Prontas:
+		- Array: Não
+		- ArrayList: Sim (métodos add e remove)
+	• Métodos e Sintaxe:
+		- Tamanho: array.length  vs  lista.size()
+		- Acesso: array[1]  vs  lista.get(1)
+		- Alteração: array[1] = valor  vs  lista.set(1, valor)
+---------------------------------------------------------------------------------
+Pedidos pendentes
+List<String> pedidosPendentes = new ArrayList<>();
+
+Códigos promocionais únicos
+Set<String> codigosUtilizados = new HashSet<>();
+
+Produtos por código
+Map<Integer, String> produtosPorCodigo = new HashMap<>();
+
+Contagem de vendas
+Map<String, Integer> quantidadeVendida = new HashMap<>();
+----------------------------------------------------------------------------------
+resumo-------------------------------------------------
+Uma List mantém a sequência;
+Um Set controla duplicidades;
+Um Map relaciona chaves e valores;
+Uma Queue representa uma ordem de atendimento.
+-------------------------------------------------------
+
+======================================================================================================================================================================
+======================================================================================================================================================================
+
+
+U3 Resolvendo Problemas com Estruturas 01/09/2026 17:10
+
+Conceitos aprendidos anteriormente:
+O conceito de estrutura de dados; Os arrays; As matrizes; As listas; Os conjuntos; Os mapas; As filas; As principais operações de manipulação.
+
+Etapa 1 — Compreender a entrada
+Identifique quais dados chegam ao programa. Exemplo:
+Código do produto;Nome do produto;Quantidade vendida;Dia da venda;Código promocional;Número do pedido
+
+Etapa 2 — Definir a saída
+Determine o que o programa deverá apresentar. Exemplo:
+
+Produto localizado pelo código;Total vendido por produto;Dia com maior movimento;Pedidos ainda pendentes;Códigos promocionais já utilizados;
+
+Etapa 3 — Identificar as operações
+Exemplo:Inserir pedido;Buscar produto;Remover pedido concluído;Contar vendas;Verificar duplicidade;Somar valores;Percorrer dados;Produzir relatório.
+
+
+Etapa 4 — Selecionar a estrutura
+Relacione cada necessidade a uma estrutura candidata.
+
+
+Etapa 5 — Implementar e testar
+Crie exemplos pequenos e verifique os limites.
+
+
+Etapa 6 — Avaliar a solução
+Analise:O código está legível? A estrutura representa o problema? As operações são simples?Existem repetições desnecessárias? A solução continuará adequada se os dados crescerem?
+--------------------------------------------
+Quantidade fixa: double[] vendasDiarias = new double[7];
+
+Critério 1 Quantidade fixa ou variável
+Quantidade variável: List<String> pedidos = new ArrayList<>();
+ 
+Critério 2 Ordem
+Ordem: List<String> pedidos = new ArrayList<>();
+Ordem de atendimento: Queue<String> fila = new ArrayDeque<>();
+Ordem alfabética ou numérica: Collections.sort(produtos);
+
+Critério 3 Duplicidades
+Quando elementos repetidos são válidos: List<String> produtosVendidos = new ArrayList<>();
+Quando elementos repetidos não são permitidos: Set<String> codigosUtilizados = new HashSet<>();
+ 
+Critério 4 Índice ou chave
+Acesso por índice: List<String> produtos = new ArrayList<>(); String primeiro = produtos.get(0);
+Acesso por chave: Map<Integer, String> produtosPorCodigo = new HashMap<>(); String produto = produtosPorCodigo.get(205);
+
+Critério 5 Organização tabular
+Quando o problema possui duas dimensões, uma matriz pode ser adequada. 
+Exemplos: Dias e produtos; Estudantes e disciplinas; Linhas e colunas de uma imagem; Assentos e fileiras; Coordenadas de um tabuleiro. int[][] vendas = new int[5][4];
+
+Critério 6 Legibilidade
+String[] produtos = new String[100];
+int quantidade = 0;
+O programador precisará controlar: A quantidade ocupada; As posições vazias; O limite da estrutura; Os deslocamentos; As remoções.
+List<String> produtos = new ArrayList<>();
+
+
+Critério 7 — Eficiência
+
+Tempo de execução;Quantidade de memória;Quantidade de operações;Facilidade de crescimento;Custo de inserção;Custo de busca;Custo de remoção.
+-------------------------------------------------------------resumir
+
+Caso integrado: reconstrução do sistema da lanchonete
+Requisito 1 — Cardápio por código
+Cada código identifica um produto.
+Map<Integer, String> cardapio = new HashMap<>();
+Justificativa:
+Um mapa permite recuperar o produto pela chave.
+Requisito 2 — Pedidos na ordem de registro
+List<String> pedidosRegistrados = new ArrayList<>();
+Justificativa:
+A lista mantém uma sequência e aceita repetições.
+Requisito 3 — Preparação na ordem de chegada
+Queue<String> filaPreparacao = new ArrayDeque<>();
+Justificativa:
+A fila representa o atendimento FIFO.
+Requisito 4 — Códigos promocionais únicos
+Set<String> codigosUtilizados = new HashSet<>();
+Justificativa:
+O conjunto impede a duplicação lógica dos códigos.
+Requisito 5 — Vendas por dia e produto
+int[][] vendasSemana = new int[5][4];
+Justificatva:
+A matriz representa duas dimensões.
+Requisito 6 — Contagem por produto
+Map<String, Integer> quantidadeVendida = new HashMap<>();
+Justificativa:
+O produto funciona como chave, e a quantidade funciona como valor.
+----------------------------------------------------------------------
+
+ESTRUTURAS DE DADOS NA PRÁTICA (SISTEMA DE LANCHONETE)
+1. Montar o cardápio
+	• Estrutura: Map (HashMap)
+	• Conceito: Mapeia uma chave (código) para um valor (nome do produto).
+	• Código Java:
+		Map<Integer, String> cardapio = new HashMap<>();
+		cardapio.put(101, "Café");
+		cardapio.put(205, "Suco");
+		cardapio.put(310, "Bolo");
+		cardapio.put(420, "Sanduíche");
+2. Localizar o produto
+	• Estrutura: Map (HashMap)
+	• Conceito: Busca rápida por chave utilizando o método get().
+	• Código Java:
+		int codigoInformado = 205;
+		String produto = cardapio.get(codigoInformado);
+
+		if (produto == null) {
+		    System.out.println("Código inválido.");
+		} else {
+		    System.out.println("Produto localizado: " + produto);
+		}
+3. Registrar o pedido
+	• Estruturas: 
+		- List (ArrayList): Guarda o histórico sequencial de pedidos registrados.
+		- Queue (ArrayDeque): Fila de preparo na cozinha (FIFO - Primeiro que entra, primeiro que sai).
+	• Código Java:
+		List<String> pedidosRegistrados = new ArrayList<>();
+		Queue<String> filaPreparacao = new ArrayDeque<>();
+
+		pedidosRegistrados.add(produto);
+		filaPreparacao.offer(produto);
+4. Controlar código promocional
+	• Estrutura: Set (HashSet)
+	• Conceito: Conjunto de elementos únicos (não permite duplicatas). O método add() retorna false se o item já existir.
+	• Código Java:
+		Set<String> codigosUtilizados = new HashSet<>();
+		String codigoPromocional = "PROMO10";
+
+		boolean aceito = codigosUtilizados.add(codigoPromocional);
+
+		if (!aceito) {
+		    System.out.println("Código já utilizado.");
+		}
+5. Contar a venda
+	• Estrutura: Map (HashMap)
+	• Conceito: Associa o nome do produto à quantidade vendida. O getOrDefault() recupera o valor atual ou 0 caso seja o primeiro item.
+	• Código Java:
+		Map<String, Integer> quantidadeVendida = new HashMap<>();
+
+		int quantidadeAtual = quantidadeVendida.getOrDefault(produto, 0);
+		quantidadeVendida.put(produto, quantidadeAtual + 1);
+6. Concluir o próximo pedido
+	• Estrutura: Queue (ArrayDeque)
+	• Conceito: O método poll() remove e retorna o primeiro elemento da fila.
+	• Código Java:
+		String pedidoConcluido = filaPreparacao.poll();
+
+		if (pedidoConcluido != null) {
+		    System.out.println("Pedido concluído: " + pedidoConcluido);
+		}
+O cardápio por código favorece um mapa. 
+A sequência de pedidos favorece uma lista. 
+O controle de códigos únicos favorece um conjunto. 
+A preparação pela ordem de chegada favorece uma fila. 
+As vendas por dia e produto favorecem uma matriz.
+
+" fazer o mesmo com Sistema escolar;
+Clínica;
+Biblioteca;
+Loja virtual;
+Aplicativo de transporte;
+Jogo;
+Sistema de reservas."
+--------------------------------------------------------------------------------
+
+======================================================================================================================================================================
+======================================================================================================================================================================
+
+U3 Efetivando a Experiência de Aprendizagem 02/09/2026 17:37
+
+Atividade - Mapa de Decisão: Escolha de Estruturas de Dados em Java
+
+
+Forma de Organização dos Dados: Sequência; Linhas e colunas ;Chave e valor; Elementos únicos; Ordem de atendimento. HashMap<Integer, String>
+Operações Necessárias: Inserção; Busca; Alteração; Remoção;  Percurso; Contagem; Verificação de duplicidade. ArrayList<String>
+Critérios de Escolha: Tamanho fixo ou variável; Ordem; Duplicidade; Acesso por índice; Acesso por chave; Legibilidade; Eficiência.
+Array pode armazenar os nomes
+HashMap facilita a consulta pelo código
+
+Para cada ramificação, inclua:
+
+Uma definição curta;
+Uma estrutura de dados;
+Um exemplo prático;
+Uma justificativa;
+Um ponto de atenção.
+
+----------------------------
+
+
+======================================================================================================================================================================
+======================================================================================================================================================================
+
+U3 Interagindo em Rede 02/09/2026 17:44
+
+perguntas tema para as seguntes mecânicas:Array; Matriz; ArrayList; HashSet; HashMap; Queue.
+Qual problema a estrutura ajuda a resolver?
+Quais operações aparecem com maior frequência?
+Quais vantagens são destacadas?
+Quais limitações ou cuidados são apresentados?
+Em qual situação outra estrutura seria mais adequada?
+
+
+======================================================================================================================================================================
+======================================================================================================================================================================
+
+
+U4 Implementação Prática de Algoritimos 04/09/2026 14:46
+
+Conhecimentos prévios necessários
+
+Para acompanhar esta unidade, você precisa ter conhecimentos básicos sobre os seguintes temas:
+Lógica de programação e construção de algoritmos;
+Pseudocódigo e fluxogramas;
+Variáveis, constantes e tipos de dados;
+Operadores aritméticos, relacionais e lógicos;
+Entrada e saída de dados em Java;
+Estruturas condicionais if, else e switch;
+Estruturas de repetição for, while e do-while;
+Criação e utilização de métodos;
+Parâmetros, retorno de valores e escopo de variáveis;
+Arrays unidimensionais;
+Matrizes e estruturas básicas de armazenamento de dados.
+
+
+Ao final desta Unidade de Aprendizagem, espera-se que você seja capaz de:
+Implementar algoritmos utilizando a linguagem Java, aplicando estruturas sequenciais, condicionais, de repetição e métodos.
+Organizar e manipular dados utilizando variáveis, arrays, matrizes e coleções adequadas ao problema computacional.
+Interpretar requisitos de um programa e decompor problemas em etapas menores para facilitar sua implementação.
+Selecionar estruturas de controle e organização de dados considerando as necessidades da aplicação e as operações a serem realizadas.
+Testar, analisar e corrigir programas a partir de diferentes entradas de dados, verificando resultados e identificando possíveis erros.
+Desenvolver soluções computacionais mais organizadas, legíveis e reutilizáveis, utilizando boas práticas de programação.
+_______________________________________________________
+
+======================================================================================================================================================================
+======================================================================================================================================================================
+
+U4 Implementação de algoritmos e qualidade do código-fonte 04/09/2026 15:05
+
+Quando as variáveis não tem nomes sólidos e de fácil interpretação como entender o código?
+Tentar compreender o significado de cada variável; Executar o programa com diferentes valores; Renomear os elementos do código; 
+Separar as diferentes responsabilidades; Inserir mensagens mais claras; Organizar a indentação; Comparar o programa com os requisitos da empresa.
+
+___________________________________________________________
+Anatomia básica de um programa Java
+Observe novamente a estrutura:
+
+import java.util.Scanner;
+public class CalculadoraCompra {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        // Instruções do programa
+    }
+}
+
+
+
+Importação
+import java.util.Scanner;
+A importação permite utilizar a classe Scanner, que será empregada para receber dados digitados pelo usuário.
+
+Declaração da classe
+public class CalculadoraCompra {
+A classe reúne os elementos que compõem o programa. O nome do arquivo deve corresponder ao nome da classe pública. Nesse caso, o arquivo deverá ser chamado CalculadoraCompra.java.
+
+Método principal
+public static void main(String[] args) {
+O método main é o ponto inicial de execução de uma aplicação Java simples.
+
+Blocos
+As chaves delimitam blocos de código:
+{
+    // Instruções pertencentes ao bloco
+}
+____________________________________________________________________________
+
+Organização do código-fonte
+Em um programa Java básico, uma organização possível é:
+importações; declaração da classe; constantes; método main;
+outros métodos; fechamento da classe.
+import java.util.Scanner;
+
+public class ControleEstoque {
+    private static final int LIMITE_ESTOQUE_BAIXO = 5;
+    public static void main(String[] args) {// Fluxo principal do programa}
+
+    public static int calcularTotal(int[] quantidades) {// Cálculo do total; return 0;}
+    public static void exibirRelatorio() {// Apresentação do relatório}
+}
+______________________________________________________________________________
+Leia as páginas 2 a 19 do capítulo 1 do livro Estruturas de dados e Algoritmos em Java de GOODRICH & TAMASSIA
+
+______________________________________________________________________________
+Na convenção adotada em Java, nomes de variáveis e métodos normalmente utilizam o padrão camelCase:
+double valorTotalCompra; int quantidadeEstoque; String nomeProduto;
+Os nomes das classes normalmente utilizam o padrão PascalCase:
+ControleEstoque; CalculadoraCompra; CadastroProduto
+constantes normalmente são escritas com letras maiúsculas e palavras separadas por sublinhado:
+private static final int LIMITE_ESTOQUE_BAIXO = 5; private static final double TAXA_DESCONTO = 0.10;
+documentação oficial recomenda que eles sejam representados por verbos ou expressões iniciadas por verbos
+_______________________________________________________________________________
+Boas práticas iniciais de desenvolvimento
+Durante a implementação de um programa, recomenda-se:
+
+compreender o problema antes de programar;
+identificar entradas, processamentos e saídas;
+dividir o problema em etapas;
+escolher nomes significativos;
+manter a indentação consistente;
+evitar números sem significado explícito;
+utilizar comentários somente quando agregarem informação;
+escrever mensagens compreensíveis;
+compilar e executar o programa frequentemente;
+testar pequenas partes antes de ampliar a solução;
+comparar o resultado obtido com o resultado esperado;
+revisar o código após fazê-lo funcionar.
+
+Google Java Style Guide
+________________________________________________________________________________
+
+======================================================================================================================================================================
+======================================================================================================================================================================
+
+U4 Estruturas de Controle e Condicional 04/09/2026 15:26
+
+Problema: A CodeMarket deseja substituir o preenchimento fixo dos arrays por um cadastro realizado pelo usuário.
+
+O programa deverá: solicitar o nome de cada produto; solicitar sua quantidade; rejeitar quantidades negativas;
+repetir o cadastro para todos os produtos; somar as quantidades; mostrar quais produtos estão com estoque baixo;
+apresentar o total ao final.
+
+Pensando na situação-problema, provavelmente, a solução exigirá mais de uma estrutura:
+
+comandos sequenciais para ler e processar dados; uma condição para identificar valores inválidos;
+uma repetição para cadastrar vários produtos; outra condição para identificar o estoque baixo;
+uma variável acumuladora para calcular o total.
+
+Relembrando as estruturas::::::::::::::::::
+*********************Estrutura sequencial*********************
+
+Na estrutura sequencial, as instruções são executadas na ordem em que aparecem.
+
+System.out.print("Informe o preço: ");
+
+double preco = scanner.nextDouble();
+
+System.out.print("Informe a quantidade: ");
+
+int quantidade = scanner.nextInt();
+
+double total = preco * quantidade;
+
+System.out.println("Total: " + total);
+
+*********************Estruturas condicionais*********************
+
+As estruturas condicionais permitem escolher caminhos de execução.
+
+Condição simples
+
+if (quantidade < 5) {
+
+    System.out.println("Estoque baixo.");
+
+}
+
+*********************Condição composta*********************
+
+if (quantidade >= 0) {
+
+    System.out.println("Quantidade válida.");
+
+} else {
+
+    System.out.println("Quantidade inválida.");
+
+}
+
+*********************Condições compostas*********************
+
+Os operadores lógicos permitem combinar condições.
+
+Operador &&
+
+As duas condições devem ser verdadeiras:
+
+if (quantidade > 0 && quantidade < 5) {
+
+    System.out.println("Produto disponível, mas com estoque baixo.");
+
+}
+
+*********************Operador ||*********************
+
+Pelo menos uma condição deve ser verdadeira:
+
+if (categoria.equals("Informática")
+
+        || categoria.equals("Eletrônicos")) {
+
+    System.out.println("Produto do setor tecnológico.");
+
+}
+
+*********************Operador !*********************
+
+Inverte um valor lógico:
+
+if (!produtoAtivo) {
+
+    System.out.println("Produto inativo.");
+
+}
+
+*********************Estruturas de repetição*********************
+
+As estruturas de repetição executam um bloco mais de uma vez.
+
+for
+
+É adequado quando o número de repetições é conhecido ou pode ser determinado pelo tamanho de uma estrutura.
+
+for (int indice = 0; indice < 5; indice++) {
+
+    System.out.println("Cadastro " + (indice + 1));
+
+}
+
+Para percorrer um array:
+
+for (int indice = 0; indice < produtos.length; indice++) {
+
+    System.out.println(produtos[indice]);
+
+}
+
+while
+
+É adequado quando a repetição depende de uma condição e não se sabe previamente quantas tentativas serão necessárias.
+
+while (quantidade < 0) {
+
+    System.out.println("Quantidade inválida.");
+
+    System.out.print("Informe novamente: ");
+
+    quantidade = scanner.nextInt();
+
+}
+
+do-while
+
+O do-while executa o bloco ao menos uma vez, pois sua condição é avaliada depois da primeira execução.
+
+do {
+
+    System.out.print("Informe uma quantidade não negativa: ");
+
+    quantidade = scanner.nextInt();
+
+} while (quantidade < 0);
+_______________________________________________________________________________
+
+Leia as páginas 20 a 31 do capítulo 1 do livro Estruturas de dados e Algoritimos em Java de GOODRICH & TAMASSIA para entender melhor sobre conceitos básicos de expressões, operadores e controle de fluxo (if, switch, laços) em linguagem de programação Java.
+
+======================================================================================================================================================================
+======================================================================================================================================================================
+
+U4 Funções e Modularização Eficiente 04/09/2026 16:50
+
+
+O que é modularização: Modularizar significa dividir um problema maior em partes menores, mais específicas e administráveis.
+
+
+Considere o problema:
+
+Gerenciar o estoque da loja
+dividido em:
+Ler produtos; Ler quantidades; Validar quantidades; Calcular total; Identificar estoque baixo
+Exibir relatório
+
+Cada parte pode ser representada por um método:
+lerProdutos(); lerQuantidades(); calcularTotal();
+identificarEstoqueBaixo(); exibirRelatorio();
+
+Estrutura de um método:
+modificador de acesso; tipo de retorno; nome;
+parâmetros; corpo; comando de retorno, quando necessário.
+
+Métodos sem retorno: Quando um método realiza uma ação, mas não precisa devolver um valor, utiliza-se void.
+public static void exibirTitulo() {System.out.println("RELATÓRIO DE ESTOQUE");}
+Chamada: exibirTitulo();
+
+Métodos com retorno: Quando o método precisa produzir um valor para outra parte do programa, declara-se o tipo correspondente.
+public static double calcularValorEstoque(double preco,int quantidade) {return preco * quantidade;}
+Chamada: double valor = calcularValorEstoque(25.50, 4);
+
+
+Parâmetros e argumentos: Parâmetros representam os dados que o método espera receber.
+public static boolean estoqueBaixo(int quantidade,int limite) {return quantidade < limite;}
+Na declaração, quantidade e limite são parâmetros.
+Na chamada:boolean resultado = estoqueBaixo(3, 5);
+____________________________________________________________________________________________
+
+Escopo de variáveis: Garante que dados estejam acessíveis apenas onde necessário, evitando dependências e erros.
+
+Variável local:
+public static int calcularTotal(int[] quantidades) {int total = 0;  return total;}
+A variável total existe apenas dentro de calcularTotal.
+Parâmetro: public static int calcularTotal(int[] quantidades) {
+Constante da classe: private static final int LIMITE_ESTOQUE_BAIXO = 5;
+____________________________________________________________________________________________
+Manipulação modular de arrays:
+A documentação do Java define o array como um objeto que armazena uma quantidade fixa de valores de um único tipo. Depois de criado, seu tamanho permanece fixo.
+Um array pode ser enviado como parâmetro:
+public static int calcularTotal(int[] quantidades) {int total = 0;
+for (int quantidade : quantidades) {total += quantidade;} return total;}
+
+
+Outro método pode localizar o maior valor:
+public static int encontrarMaiorQuantidade(int[] quantidades) {int maior = quantidades[0];
+for (int quantidade : quantidades) {if (quantidade > maior) {maior = quantidade;}}return maior;}
+
+Outro pode localizar o índice do produto:
+public static int buscarProduto(String[] produtos, String nomeProcurado) {
+for (int indice = 0; indice < produtos.length; indice++) {
+        if (produtos[indice].equalsIgnoreCase(nomeProcurado)) {return indice;}} return -1;}
+
+O valor -1 sinaliza que o produto não foi encontrado.
+
+____________________________________________________________________________________________
+
+Manipulação modular de matrizes
+Um método pode calcular o total de uma linha:
+public static int calcularTotalProduto(int[][] vendas, int indiceProduto) {int total = 0;    
+for (int semana = 0; semana < vendas[indiceProduto].length; semana++) {
+        total += vendas[indiceProduto][semana];} return total;}
+
+Outro pode calcular o total geral:
+public static int calcularTotalGeral(int[][] vendas) {int total = 0;
+for (int linha = 0; linha < vendas.length; linha++) {for (int coluna = 0; coluna < vendas[linha].length; coluna++) {
+ total += vendas[linha][coluna];}} return total;}
+
+____________________________________________________________________________________________
+Arrays ou coleções?
+A estrutura ArrayList é útil quando:
+a quantidade de elementos não é conhecida antecipadamente;
+novos elementos poderão ser adicionados;
+elementos poderão ser removidos;
+o programa precisa consultar o tamanho atual dinamicamente.
+O Collections Framework do Java oferece interfaces e implementações para armazenar, recuperar e processar grupos de objetos. Entre as estruturas mais conhecidas estão List, Set, Queue e Map.
+
+arrays armazenam os dados principais; um método analisa os dados; uma lista dinâmica armazena somente os alertas; outro trecho apresenta os resultados.
+
+
+======================================================================================================================================================================
+======================================================================================================================================================================
+
+U4 Implementação e Testes de Algoritmos 07/09/2026 16:59
+
+O que significa testar um algoritmo?
+executar ou avaliar uma solução com dados planejados para verificar se o comportamento observado corresponde ao comportamento esperado.
+Um teste possui, pelo menos: condição inicial; dados de entrada; resultado esperado; resultado obtido; avaliação; ação corretiva, quando necessária.
+
+Depuração: Essa etapa consiste em localizar, compreender e corrigir os problemas encontrados, utilizando estratégias que permitem analisar o comportamento do programa detalhadamente.
+etapas: reproduzir o problema; registrar a entrada utilizada; identificar o resultado esperado; localizar a região provável do erro;
+acompanhar variáveis e condições; formular uma hipótese; realizar uma alteração pequena; executar novamente; verificar se outros comportamentos foram afetados.
+
+
+Breakpoints: Um breakpoint interrompe temporariamente a execução em uma linha escolhida.
+observar os valores das variáveis; avançar linha por linha; acompanhar chamadas de métodos; verificar o conteúdo de arrays e objetos; analisar a pilha de chamadas.
+
+Estrutura try-catch: Ele permite que você tente executar um trecho de código e capture possíveis erros, garantindo que o programa continue funcionando mesmo quando uma situação inesperada ocorrer. 
+try {
+    int quantidade = Integer.parseInt("quatro");
+    System.out.println(quantidade);
+} catch (NumberFormatException erro) {System.out.println("Não foi possível converter a entrada para um número inteiro.");}
+
+Validação e Exceção Não São a Mesma Coisa
+Embora o try-catch trate erros de execução, é importante lembrar que validação e exceção não são a mesma coisa. 
+Validar os dados significa checar se eles atendem às regras esperadas antes de processá-los, enquanto exceções lidam com situações imprevistas durante a execução
+
+Leitura Segura de Números Inteiros
+public static int lerInteiroNaoNegativo(Scanner scanner, String mensagem) {
+    while (true) {System.out.print(mensagem); String entrada = scanner.nextLine().trim();
+        try {
+            int valor = Integer.parseInt(entrada);
+            if (valor < 0) {System.out.println("O valor não pode ser negativo.");
+                continue;}
+            return valor;
+        } catch (NumberFormatException erro) {System.out.println("Entrada inválida. Digite um número inteiro.");}}}
+
+Esse método trata: entrada vazia; letras; números decimais em formato incompatível; símbolos; números negativos.
+
+Um teste com JUnit poderia ser:
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+import org.junit.jupiter.api.Test;
+
+public class ControleEstoqueTest {
+
+    @Test
+
+    void deveCalcularTotalDoEstoque() {
+
+        int[] quantidades = {10, 4, 7};
+
+        int resultado = ControleEstoque.calcularTotal(
+
+            quantidades
+
+        );
+
+        assertEquals(21, resultado);
+
+    }
+
+}
+
+A classe Assertions do JUnit reúne métodos que permitem verificar condições em testes, como igualdade, veracidade, nulidade e ocorrência de exceções.
+
+Estrutura do teste
+
+Preparar os dados
+Executar o método
+Comparar o resultado
+Essa organização também é conhecida como:
+
+Arrange
+Act
+Assert
+No exemplo:
+
+preparar: criar o array;
+executar: chamar calcularTotal;
+verificar: comparar o resultado com 21.
+
+Conclusão
+Para sintetizar o que vimos nesse tópico, aprendemos que um processo consistente de implementação envolve:
+
+Compreender
+Planejar
+Implementar
+Executar
+Testar
+Comparar
+Depurar
+Corrigir
+Testar novamente
+
+
+
+======================================================================================================================================================================
+======================================================================================================================================================================
+
+U4 Efetivando a Experiência de Aprendizagem 07/09/2026 17:16
+
+Desenvolvimento de uma solução Java confiável
+Subideia 1 — Implementação e organização
+uma definição curta sobre implementação de algoritmos em Java;
+duas boas práticas de organização ou legibilidade;
+um pequeno exemplo relacionado ao sistema de estoque
+
+Subideia 2 — Integração e modularização
+uma definição curta sobre integração de estruturas;
+as funções das estruturas sequencial, condicional e de repetição;
+pelo menos dois métodos que poderiam compor o sistema;
+um exemplo envolvendo array, matriz ou coleção.
+
+Subideia 3 — Testes, depuração e validação
+uma definição curta sobre testes;
+um exemplo de entrada válida;
+um exemplo de entrada inválida;
+uma ação de depuração;
+uma forma de tratamento do problema.
+
+
+Solução Java confiável:
+Implementação e organização: definição; boas práticas; exemplo
+Integração e modularização: estruturas; métodos; estrutura de dados
+Testes e validação: teste; entrada válida; entrada inválida; tratamento
+
+
+======================================================================================================================================================================
+======================================================================================================================================================================
+
+U4 Interagindo em Rede 07/09/26 17:22
+
+“9 Java Clean Code Tips”, de Spartak Lysman, apresenta práticas como nomes significativos, responsabilidade única para funções, eliminação de números mágicos e reutilização de código.
+https://www.linkedin.com/posts/spartak-lysman_systemdesign-interviewtips-coding-activity-7391064050236919808-mzAd
+
+“These IntelliJ IDEA Features Will Save Your Bacon”, Trisha Gee apresenta recursos do IntelliJ IDEA que auxiliam programadores durante situações problemáticas de desenvolvimento e depuração.
+https://www.linkedin.com/posts/trishagee_these-intellij-idea-features-will-save-your-activity-7298039999122296832-AAUE
+
+
+Elias Nogueira apresenta uma arquitetura de testes automatizados em Java organizada com classes de teste, objetos de página e separação dos dados utilizados nos testes.
+https://www.linkedin.com/posts/eliasnogueira_github-eliasnogueiraselenium-java-lean-test-architecture-activity-7307341297021841408-vKRS
+
+
+
+
