@@ -2,6 +2,8 @@
 
 🇺🇸 English · 🇧🇷 [Português](README.pt-BR.md)
 
+🔗 **Portfolio:** this project and my others at [felipebherve.github.io](https://felipebherve.github.io/#projects).
+
 ## Where I was when I made this
 
 In 2026 I started the **Análise e Desenvolvimento de Sistemas (ADS)** degree at UniRitter (distance learning). This repository has my notes and code for the first course, **Algorithms and Programming**, from the first weeks (late August to mid-September 2026).
