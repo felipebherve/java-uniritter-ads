@@ -2,6 +2,8 @@
 
 🇧🇷 Português · 🇺🇸 [English](README.md)
 
+🔗 **Portfólio:** este e os meus outros projetos em [felipebherve.github.io](https://felipebherve.github.io/#projects).
+
 ## Em que momento eu fiz isto
 
 Em 2026 comecei o curso de **Análise e Desenvolvimento de Sistemas (ADS)** na UniRitter (EAD). Este repositório tem minhas anotações e códigos da primeira disciplina, **Algoritmos e Programação**, das primeiras semanas (do fim de agosto a meados de setembro de 2026).
